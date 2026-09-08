@@ -410,11 +410,13 @@ button:focus-visible, a:focus-visible{
    title/menu/HUD/quote text that must be fully hidden behind our live UI */
 .photo-vignette-hero{
   background:
-    linear-gradient(90deg, rgba(2,3,7,1) 0%, rgba(2,3,7,1) 46%, rgba(2,3,7,0.75) 64%, rgba(2,3,7,0.28) 82%, transparent 95%),
-    radial-gradient(ellipse 40% 38% at 100% 0%, rgba(2,3,7,1) 0%, rgba(2,3,7,1) 30%, rgba(2,3,7,0.9) 68%, transparent 100%),
-    radial-gradient(ellipse 40% 40% at 100% 100%, rgba(2,3,7,1) 0%, rgba(2,3,7,1) 30%, rgba(2,3,7,0.9) 68%, transparent 100%),
-    radial-gradient(ellipse 32% 32% at 0% 100%, rgba(2,3,7,1) 0%, rgba(2,3,7,1) 25%, rgba(2,3,7,0.85) 62%, transparent 100%),
-    linear-gradient(180deg, rgba(2,3,7,0.7) 0%, transparent 12%);
+    linear-gradient(90deg, rgba(2,3,7,0.58) 0%, rgba(2,3,7,0.38) 46%, rgba(2,3,7,0.2) 72%, transparent 100%),
+    linear-gradient(180deg, rgba(2,3,7,0.45) 0%, transparent 18%, rgba(2,3,7,0.2) 100%);
+}
+
+.photo-bg-crossfade .photo-layer{
+  animation:none;
+  transform:none;
 }
 @media (max-width: 960px){
   .photo-vignette-hero{
