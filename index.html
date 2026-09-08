@@ -1,301 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Agrawal | SDE II | Portfolio</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <style>
-        :root {
-            --primary: #38bdf8;
-            --secondary: #818cf8;
-            --bg: #020617;
-            --glass: rgba(30, 41, 59, 0.7);
-            --text-dim: #94a3b8;
-        }
-
-        * { box-sizing: border-box; scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background-color: var(--bg);
-            color: #f8fafc;
-            margin: 0;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
-
-        /* Responsive Navigation */
-        nav {
-            position: fixed;
-            top: 0; width: 100%;
-            background: rgba(2, 6, 23, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .nav-container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            padding: 0 1rem; 
-        }
-        .nav-links { 
-            display: flex; 
-            gap: 1rem; 
-            flex-wrap: wrap; 
-            justify-content: center;
-            margin-top: 10px;
-        }
-        .nav-links a { color: #f8fafc; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: 0.3s; }
-        
-        @media (min-width: 768px) {
-            .nav-container { flex-direction: row; justify-content: space-between; }
-            .nav-links { margin-top: 0; gap: 1.5rem; }
-        }
-
-        /* Responsive Layout */
-        .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 1rem; }
-        section { padding: 5rem 0 1rem 0; }
-        
-        .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            word-wrap: break-word;
-        }
-
-        h1 { 
-            font-size: clamp(2.2rem, 10vw, 3.5rem); 
-            margin: 0; 
-            background: linear-gradient(to right, var(--primary), var(--secondary)); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-        }
-        
-        h2.section-header { font-size: 1.8rem; border-left: 4px solid var(--primary); padding-left: 1rem; margin-bottom: 2rem; }
-
-        /* Flexible Skills Grid */
-        .skills-matrix { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 1.5rem; 
-        }
-        .skill-tag { 
-            display: inline-block; 
-            background: rgba(56, 189, 248, 0.1); 
-            color: var(--primary); 
-            padding: 4px 12px; 
-            border-radius: 4px; 
-            margin: 4px; 
-            font-size: 0.85rem; 
-            border: 1px solid rgba(56, 189, 248, 0.2); 
-        }
-
-        /* Timeline Responsive */
-        .timeline-item { border-left: 2px solid #334155; padding-left: 1.5rem; position: relative; margin-bottom: 2.5rem; }
-        .timeline-item::before { content: ''; position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: var(--primary); border-radius: 50%; }
-        
-        .grid-responsive {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        @media (min-width: 768px) {
-            .grid-responsive { grid-template-columns: 1fr 1fr; }
-            .container { padding: 2rem; }
-            .glass-card { padding: 2rem; }
-        }
-
-        header { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 100px 1rem 20px 1rem; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev Agrawal — Software Engineer II, DevOps / Cloud / DevSecOps</title>
+<meta name="description" content="Dev Agrawal — Software Engineer II specializing in DevOps, Cloud infrastructure and DevSecOps at JPMorgan Chase.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Yellowtail&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="particles-js"></div>
 
-    <nav>
-        <div class="nav-container">
-            <div style="font-weight: bold; color: var(--primary)">PORTFOLIO</div>
-            <div class="nav-links">
-                <a href="#about">Professional Summary</a>
-                <a href="#skills">Skills</a>
-                <a href="#experience">Professional Experience</a>
-                <a href="#certs">Certifications</a>
-            </div>
-        </div>
-    </nav>
+<!-- ================= BOOT OVERLAY ================= -->
+<div id="boot-overlay">
+  <div class="boot-term">
+    <div id="boot-lines"></div>
+    <span class="boot-cursor">▊</span>
+  </div>
+</div>
 
-    <div class="container">
-        <header>
-            <h1 data-aos="zoom-in">Dev Agrawal</h1>
-            <div style="font-size: 1.3rem; color: var(--text-dim); margin: 1rem 0; min-height: 1.5em;"><span id="typed"></span></div>
-            <p style="max-width: 900px;">Pune, India | <a href="mailto:dev9893186747@gmail.com" style="color: white; word-break: break-all;">dev9893186747@gmail.com</a> | <a href="https://www.linkedin.com/in/dev-a-403937188/" target="_blank" style="color: white;">LinkedIn</a> | contact: 9993952909</p>
-        </header>
+<!-- ================= PERSISTENT HUD ================= -->
+<header class="hud" aria-hidden="false">
+  <div class="hud-center">
+    <svg class="hud-center-icon" viewBox="0 0 20 14"><rect x="0" y="6" width="3" height="8" fill="currentColor"/><rect x="5" y="2" width="3" height="12" fill="currentColor"/><rect x="10" y="8" width="3" height="6" fill="currentColor"/><rect x="15" y="4" width="3" height="10" fill="currentColor"/></svg>
+    <span id="hud-uptime-pct">98.4</span>
+  </div>
 
-        <section id="about" data-aos="fade-up">
-            <h2 class="section-header">Professional Summary</h2>
-            <div class="glass-card">
-                <p>Software Engineer with 3+ years of experience in cloud-native application development, DevOps, and infrastructure design. Experienced in implementing scalable CI/CD pipelines, Infrastructure as Code (IaC), and container orchestration with a strong focus on security automation. Skilled in improving build efficiency, code quality, and infrastructure reliability using tools like Jenkins, SonarQube, Checkmarx, Snyk, Aqua, and AWS CloudFormation. Passionate about building secure, resilient, and observable systems by applying modern DevOps and DevSecOps practices.</p>
-            </div>
-        </section>
-
-        <section id="skills" data-aos="fade-up">
-            <h2 class="section-header">Technical Toolkit</h2>
-            <div class="glass-card">
-                <div class="skills-matrix">
-                    <div class="skill-category">
-                        <h4>Cloud & Infrastructure</h4>
-                        <span class="skill-tag">Amazon Web Service</span><span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span><span class="skill-tag">Terraform</span>
-                        <span class="skill-tag">Grafana</span><span class="skill-tag">Kibana</span>
-                        <span class="skill-tag">Dynatrace</span><span class="skill-tag">Prometheus</span>
-                    </div>
-                    <div class="skill-category">
-                        <h4>AWS Services</h4>
-                        <span class="skill-tag">EC2</span><span class="skill-tag">S3</span>
-                        <span class="skill-tag">IAM</span><span class="skill-tag">Lambda</span>
-                        <span class="skill-tag">KMS</span><span class="skill-tag">Route53</span>
-                        <span class="skill-tag">ASG</span><span class="skill-tag">ALB</span>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Concepts</h4>
-                        <span class="skill-tag">CI/CD</span><span class="skill-tag">IaC</span>
-                        <span class="skill-tag">CSPM</span><span class="skill-tag">SAST</span>
-                        <span class="skill-tag">DAST</span><span class="skill-tag">System Design</span>
-                        <span class="skill-tag">Database Management</span><span class="skill-tag">Vulnerability Management</span>
-                    </div>
-                    <div class="skill-category">
-                        <h4>DevSecOps & Security</h4>
-                        <span class="skill-tag">Wiz(CSPM)</span><span class="skill-tag">SonarQube</span>
-                        <span class="skill-tag">Snyk</span><span class="skill-tag">AWS Inspector</span>
-                        <span class="skill-tag">Nessus</span><span class="skill-tag">Aqua</span>
-                        <span class="skill-tag">IAM policies</span><span class="skill-tag">SCPs</span>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Monitoring Tools</h4>
-                        <span class="skill-tag">Prometheus</span><span class="skill-tag">Grafana</span>
-                        <span class="skill-tag">CloudWatch</span>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Programming Languages</h4>
-                        <span class="skill-tag">Python</span><span class="skill-tag">Groovy</span>
-                        <span class="skill-tag">Bash/Shell</span>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Frameworks & Tools</h4>
-                        <span class="skill-tag">Jenkins</span><span class="skill-tag">SonarQube</span>
-                        <span class="skill-tag">Chef</span><span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span><span class="skill-tag">Maven</span>
-                        <span class="skill-tag">Jfrog</span><span class="skill-tag">Snyk</span>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Version Control & IDE</h4>
-                        <span class="skill-tag">Git</span><span class="skill-tag">Visual Studio Code (VS Code)</span>
-                        <span class="skill-tag">IntelliJ</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" data-aos="fade-up">
-            <h2 class="section-header">Professional Experience</h2>
-            
-            <div class="timeline-item">
-                <span class="date">Feb 2025 - Present</span>
-                <p class="job-title">Software Engineer II</p>
-                <p class="company">JP Morgan Chase - Pune, India</p>
-                <ul>
-                    <li><b>Automated Security Remediation:</b> Worked on an auto-remediation framework for AWS services leveraging WIZ CSPM, automatically identifying and proactively resolving critical deployment risks and reducing Mean Time to Remediation (MTTR).</li>
-                    <li><b>Shift-Left DevSecOps:</b> Implemented SAST, SCA, and Docker scanning at the earliest stages of the SDLC, preventing 20-30% of vulnerabilities from reaching production and ensuring secure-by-design deployments.</li>
-                    <li><b>IAM &Access Control:</b> Designed and enforced robust access controls using AWS Organizations SCPs, IAM policies, and Network Security Groups to implement least privilege access across 37 AWS accounts.</li>
-                    <li><b> Docker Base Image Framework:</b> Engineered a modular Docker base-image framework for rootless containers, streamlining container release cycles and enhancing security compliance for microservices, resulting in optimized deployment pipelines and reduced vulnerability exposure.</li>
-                    <li><b>Python-based API for applying tollgates on CI pipeline:</b> Designed and implemented a Python API to enforce tollgates in CI pipelines, enabling automated security and compliance checks within existing CI/CD workflows. Integrated the solution with CI tools to improve deployment safety and ensure adherence to organizational policies, blocking 20% of applications from accessing vulnerable data in production.</li>
-                    <li><b>Cockpit (OpsLevel) Integration:</b> Integrated Cockpit (OpsLevel) to integrate and manage internal services across the organization. Automated enforcement of service maturity standards, including ownership assignment, observability validation, and security compliance checks. Enhanced visibility into the service lifecycle and operational readiness through standardized workflows and governance.</li>
-                </ul>
-            </div>
-
-            <div class="timeline-item">
-                <span class="date">Jul 2022 - Jan 2025</span>
-                <p class="job-title">Software Engineer I</p>
-                <p class="company">JP Morgan Chase - Pune, India</p>
-                <ul>
-                    <li><b>AWS Infrastructure Automation:</b> Built and created CloudFormation templates for deploying AWS Lambda functions with dynamic environment variables, reducing manual setup by 70%, and developed CI/CD pipelines to automate the Lambda application deployment, ensuring consistent and efficient infrastructure provisioning using Infrastructure as Code (IaC).</li>
-                    <li><b>Ci/CD Optimization:</b> Developed and maintained scalable CI/CD pipelines, integrating SonarQube for code quality analysis and automating containerized deployments using Jenkins, Kubernetes, and Docker, reducing build times by 50% and accelerating the deployment speed.</li>
-                    <li><b>Process Gatekeeper:</b> Developed a Python-based tool for Jira ticket validation, deployed on AWS Lambda and integrated with Jenkins, S3, Application Load Balancer (ALB), and Route 53 to streamline workflow automation.</li>
-                    <li><b>Adoption Analyzer:</b> Developed an internal API contract data service to classify repositories by tech stack (.NET, Angular, Python) and monitor CI/CD compliance throughout the SDLC. Aggregated pipeline metadata and enforced code analysis using SonarQube and Snyk. Automated checks for deprecated .NET and Angular versions to improve code hygiene, visibility, and governance, resulting in a 30% increase in shared library adoption within a month.</li>
-                </ul>
-            </div>
-
-            <div class="timeline-item">
-                <span class="date">March 2021 - May 2021</span>
-                <p class="job-title">Research Intern</p>
-                <p class="company">National Institute of Technology - Tiruchirapalli, India</p>
-                <ul>
-                     <li>Co-authored the research paper 'Ontospammer', which presents hybrid bagging methods for spam detection using Support Vector Machines (SVM) and Random Forest classifiers.</li>
-                     <li>Developed a metadata-driven course recommendation framework in 'HSIL', using XGBoost classification and genetic algorithm-based concept similarity metrics to improve the accuracy of the recommendation.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="certs" data-aos="fade-up">
-            <div class="grid-responsive">
-                <div>
-                    <h2 class="section-header">Education</h2>
-                    <div class="glass-card">
-                        <p><strong>Jaypee Institute of Information Technology, B.Tech. in Computer Science</strong><br>
-                        Noida, India<br>
-                        <span class="date">Aug 2018 - Jun 2022 </span></p>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="section-header">Recognitions</h2>
-                    <div class="glass-card">
-                        <ul>
-                            <li>AWS Certified DevOps Engineer – Professional (2026–2029)</li>
-                            <li>HashiCorp Terraform Associate (2024-2026) </li>
-                            <li>AWS Certified Cloud Practitioner (2023-2026) </li>
-                            <li>Kudos Award (JP Morgan Chase Co., for outstanding contributions.)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>© 2025 Dev Agrawal | Built for High Availability</p>
-        </footer>
+  <div class="hud-right">
+    <div class="hud-avatar">D</div>
+    <div class="hud-stats">
+      <span class="hud-clock" id="hud-clock">00:00</span>
+      <span class="hud-xp" id="hud-xp">$0</span>
+      <div class="hud-life"><span class="heart">♥</span><span id="hud-life-val">100</span></div>
+      <div class="hud-clearance" id="hud-clearance" aria-label="Security clearance level">
+        <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+      </div>
+      <div class="hud-tags">BUILD <span>•</span> DEPLOY <span>•</span> SECURE</div>
     </div>
+  </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
+  <button class="hud-esc" id="btn-esc">ESC — BACK TO MENU</button>
+</header>
 
-        new Typed('#typed', {
-            strings: ['Software Engineer II', 'DevOps Engineer', 'Cloud Engineer', 'DevSecOps Engineer'],
-            typeSpeed: 60,
-            backSpeed: 40,
-            loop: true
-        });
+<!-- global film-grain / scanline overlay -->
+<div class="scanlines" aria-hidden="true"></div>
 
-        particlesJS('particles-js', {
-            "particles": {
-                "number": { "value": 50 },
-                "color": { "value": "#38bdf8" },
-                "opacity": { "value": 0.4 },
-                "size": { "value": 2 },
-                "line_linked": { "enable": true, "distance": 150, "color": "#38bdf8", "opacity": 0.2, "width": 1 },
-                "move": { "enable": true, "speed": 1.5 }
-            }
-        });
-    </script>
+<!-- side nav arrows -->
+<button class="nav-arrow nav-arrow-left" id="arrow-prev" aria-label="Previous section">
+  <svg viewBox="0 0 24 24"><path d="M15 4L7 12l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<button class="nav-arrow nav-arrow-right" id="arrow-next" aria-label="Next section">
+  <svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<!-- bottom-left objective / minimap -->
+<div class="objective-panel">
+  <svg class="minimap" viewBox="0 0 100 60">
+    <line x1="6" y1="54" x2="94" y2="6" stroke="var(--map-line)" stroke-width="2"/>
+    <circle id="minimap-dot" cx="6" cy="54" r="4" fill="var(--accent-current)"/>
+    <text x="8" y="14" class="minimap-n">N</text>
+  </svg>
+  <div class="objective-text">
+    <span class="objective-eyebrow">CURRENT OBJECTIVE</span>
+    <span class="objective-title" id="objective-title">START SESSION</span>
+  </div>
+</div>
+
+<!-- bottom dots -->
+<nav class="dots" id="dots" aria-label="Section navigation"></nav>
+
+<!-- signature quote -->
+<div class="signature">
+  <p id="signature-quote">"Infrastructure is my battlefield. Automation is my weapon."</p>
+  <span>— Dev</span>
+</div>
+
+<!-- ================= SCREENS ================= -->
+<main id="screens">
+
+  <!-- 0 : START -->
+  <section class="screen active" id="screen-start" data-index="0" data-objective="Start the session" data-quote="Infrastructure is my battlefield. Automation is my weapon.">
+    <div class="photo-bg photo-bg-crossfade" id="hero-photobg">
+      <img class="photo-layer active" src="assets/photos/ai_front.jpg" alt="" style="object-position:50% 15%;" loading="eager">
+      <img class="photo-layer" src="assets/photos/ai_motorcycle_neon.jpg" alt="" style="object-position:50% 20%;" loading="lazy">
+      <div class="photo-tint"></div>
+      <div class="photo-vignette photo-vignette-hero"></div>
+    </div>
+    <div class="grid-floor" aria-hidden="true"></div>
+
+    <div class="screen-inner start-layout">
+      <div class="start-left">
+        <p class="kicker">SOFTWARE ENGINEER II — DEVOPS / CLOUD / DEVSECOPS</p>
+        <h1 class="title-huge">DEV<span class="title-accent">AGRAWAL</span></h1>
+        <p class="title-sub">Portfolio</p>
+
+        <ul class="main-menu" id="main-menu">
+          <li><button class="menu-item active" data-goto="0">START SESSION <span class="chev">›</span></button></li>
+          <li><button class="menu-item" data-goto="1">ABOUT ME</button></li>
+          <li><button class="menu-item" data-goto="2">SKILLS</button></li>
+          <li><button class="menu-item" data-goto="3">PROJECTS</button></li>
+          <li><button class="menu-item" data-goto="4">EXPERIENCE</button></li>
+          <li><button class="menu-item" data-goto="4" data-academy="true">ACADEMY</button></li>
+          <li><button class="menu-item" data-goto="5">ACHIEVEMENTS</button></li>
+          <li><button class="menu-item" data-goto="6">CONTACT</button></li>
+          <li><button class="menu-item menu-item-exit" id="btn-exit">EXIT GAME</button></li>
+        </ul>
+      </div>
+
+      <div class="start-right">
+        <div class="term-window">
+          <div class="term-titlebar">
+            <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+            <span class="term-path">dev@production:~</span>
+          </div>
+          <div class="term-body" id="hero-term-lines"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1 : ABOUT -->
+  <section class="screen" id="screen-about" data-index="1" data-objective="Learn who you're dealing with" data-quote="Four years in, still reading logs like bedtime stories.">
+    <div class="photo-bg">
+      <img class="photo-layer active" src="assets/photos/ai_beach_reflective.jpg" alt="" style="object-position:60% 25%;" loading="lazy">
+      <div class="photo-tint"></div>
+      <div class="photo-vignette photo-vignette-left"></div>
+    </div>
+    <div class="screen-inner content-layout">
+      <div class="panel-left">
+        <p class="kicker">01 / SESSION FILE</p>
+        <h2 class="title-lg">About <span class="title-accent">Me</span></h2>
+        <p class="body-text">
+          I'm Dev — a DevOps / DevSecOps engineer who spends most days keeping cloud infrastructure
+          fast, automated and hard to break into. I build the pipelines, guardrails and remediation
+          systems that let other engineers ship without setting off alarms.
+        </p>
+
+        <div class="stat-cards">
+          <div class="stat-card">
+            <span class="stat-label">ROLE</span>
+            <span class="stat-value">Software Engineer II — DevOps / Cloud / DevSecOps</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">EMPLOYER</span>
+            <span class="stat-value">JPMorgan Chase &amp; Co. — Pune, India</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">EXPERIENCE</span>
+            <span class="stat-value">4+ years across the Travel &amp; Loyalty platform</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">FOOTPRINT</span>
+            <span class="stat-value">Least-privilege access enforced across 47 AWS accounts</span>
+          </div>
+        </div>
+      </div>
+      <div class="panel-right"></div>
+    </div>
+  </section>
+
+  <!-- 2 : SKILLS -->
+  <section class="screen" id="screen-skills" data-index="2" data-objective="Review unlocked abilities" data-quote="Every bar below was earned on an incident call, not a course certificate.">
+    <div class="photo-bg">
+      <img class="photo-layer active" src="assets/photos/ai_home_office.jpg" alt="" style="object-position:55% 25%;" loading="lazy">
+      <div class="photo-tint"></div>
+      <div class="photo-vignette photo-vignette-hero"></div>
+    </div>
+    <div class="screen-inner content-layout">
+      <div class="panel-left">
+        <p class="kicker">02 / LOADOUT</p>
+        <h2 class="title-lg">Skills <span class="title-accent">Unlocked</span></h2>
+        <div class="skill-bars" id="skill-bars">
+          <!-- populated by JS -->
+        </div>
+      </div>
+      <div class="panel-right">
+        <div class="tool-grid" id="tool-grid" aria-label="Tools and platforms"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 : PROJECTS -->
+  <section class="screen" id="screen-projects" data-index="3" data-objective="Inspect completed builds" data-quote="Four systems, one theme: fewer humans in the loop, fewer things on fire.">
+    <div class="photo-bg">
+      <img class="photo-layer active" src="assets/photos/ai_beach_cafe.jpg" alt="" style="object-position:60% 20%;" loading="lazy">
+      <div class="photo-tint"></div>
+      <div class="photo-vignette photo-vignette-hero"></div>
+    </div>
+    <div class="screen-inner content-layout">
+      <div class="panel-left">
+        <p class="kicker">03 / BUILD LOG</p>
+        <h2 class="title-lg">Projects <span class="title-accent">Showcase</span></h2>
+        <div class="project-list" id="project-list"></div>
+      </div>
+      <div class="panel-right">
+        <div class="project-detail" id="project-detail"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 : EXPERIENCE -->
+  <section class="screen" id="screen-experience" data-index="4" data-objective="Trace the full career path" data-quote="Every rotation on this list left the pipeline better than it found it.">
+    <div class="photo-bg photo-bg-crossfade" id="exp-photobg">
+      <img class="photo-layer active" src="assets/photos/castle_arms.jpg" alt="" style="object-position:50% 25%;" loading="lazy">
+      <img class="photo-layer" src="assets/photos/castle_close.jpg" alt="" style="object-position:50% 20%;" loading="lazy">
+      <div class="photo-tint"></div>
+      <div class="photo-vignette photo-vignette-left"></div>
+    </div>
+    <div class="screen-inner content-layout">
+      <div class="panel-left">
+        <p class="kicker">04 / CAREER PATH</p>
+        <h2 class="title-lg">Experience <span class="title-accent">Journey</span></h2>
+      </div>
+      <div class="panel-right">
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 : ACHIEVEMENTS -->
+  <section class="screen" id="screen-achievements" data-index="5" data-objective="Collect every unlocked trophy" data-quote="Certifications are just proof the panic eventually turned into a process.">
+    <div class="photo-bg">
+      <img class="photo-layer active" src="assets/photos/ai_lambo_vice.jpg" alt="" style="object-position:55% 20%;" loading="lazy">
+      <div class="photo-tint"></div>
+      <div class="photo-vignette photo-vignette-left"></div>
+    </div>
+    <div class="screen-inner content-layout">
+      <div class="panel-left">
+        <p class="kicker">05 / TROPHY CASE</p>
+        <h2 class="title-lg">Achievements <span class="title-accent">Unlocked</span></h2>
+      </div>
+      <div class="panel-right">
+        <div class="trophy-grid" id="trophy-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 : CONTACT -->
+  <section class="screen" id="screen-contact" data-index="6" data-objective="Open a secure line of contact" data-quote="Fastest way to reach me: email. Second fastest: a well-placed PagerDuty alert.">
+    <div class="photo-bg">
+      <img class="photo-layer active" src="assets/photos/ai_night_overlook.jpg" alt="" style="object-position:50% 25%;" loading="lazy">
+      <div class="photo-tint"></div>
+      <div class="photo-vignette photo-vignette-left"></div>
+    </div>
+    <div class="screen-inner content-layout">
+      <div class="panel-left">
+        <p class="kicker">06 / LET'S CONNECT</p>
+        <h2 class="title-lg">Contact</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">EMAIL</span>
+            <a href="mailto:dev9893186747@gmail.com" class="contact-value">dev9893186747@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-label">LOCATION</span>
+            <span class="contact-value">Pune, India</span>
+          </li>
+          <li>
+            <span class="contact-label">GITHUB</span>
+            <a href="https://github.com/DarkStarp" target="_blank" rel="noopener" class="contact-value">github.com/DarkStarp</a>
+          </li>
+          <li>
+            <span class="contact-label">LINKEDIN</span>
+            <!-- TODO: replace with your real LinkedIn URL -->
+            <a href="#" target="_blank" rel="noopener" class="contact-value">linkedin.com/in/dev-agrawal</a>
+          </li>
+        </ul>
+        <a class="cta-button" href="Dev_Agrawal_SDE2_DevOps.pdf" download>DOWNLOAD RESUME ↓</a>
+      </div>
+      <div class="panel-right">
+        <div class="contact-visual" aria-hidden="true">
+          <div class="ping-ring"></div>
+          <div class="ping-ring ping-ring-delay"></div>
+          <div class="ping-core">SIGNAL</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Exit Game confirm modal -->
+<div class="modal-backdrop" id="exit-modal">
+  <div class="modal-box">
+    <h3>End session?</h3>
+    <p>You can take a copy of everything on this page with you.</p>
+    <div class="modal-actions">
+      <a href="Dev_Agrawal_SDE2_DevOps.pdf" download class="modal-btn modal-btn-primary">DOWNLOAD RESUME</a>
+      <button class="modal-btn" id="modal-cancel">CANCEL</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
