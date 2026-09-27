@@ -13,13 +13,6 @@ const SKILLS = [
   { name: "Networking", details: "TCP/IP, switching, routing, VPC Networking", pct: 80 },
 ];
 
-const TOOLS = [
-  "ChatGPT", "Claude", "Gemini", "Wiz", "SonarQube", "Snyk",
-  "AWS Inspector", "Checkmarx", "Aqua", "Prometheus",
-  "Grafana", "AWS CloudWatch", "Jenkins", "Chef", "Git", "GitHub",
-  "Maven", "JFrog"
-];
-
 const PROJECTS = [
   {
     name: "Wiz CSPM Auto-Remediation",
@@ -171,16 +164,37 @@ function typeHero(){
    ============================================================ */
 function populateSkills(){
   const wrap = document.getElementById("skill-bars");
-  wrap.innerHTML = SKILLS.map(s => `
+  wrap.innerHTML = SKILLS.map((s, idx) => `
     <div class="skill-row">
-      <div class="skill-top"><span class="skill-name">${s.name}</span><span class="skill-pct">${s.pct}%</span></div>
+      <button class="skill-top" type="button" aria-pressed="false" data-skill-index="${idx}">
+        <span class="skill-name">${s.name}</span><span class="skill-pct">${s.pct}%</span>
+      </button>
       <div class="skill-track"><div class="skill-fill" data-pct="${s.pct}"></div></div>
-      <p class="skill-detail">${s.details}</p>
     </div>
   `).join("");
 
-  const grid = document.getElementById("tool-grid");
-  grid.innerHTML = TOOLS.map(t => `<div class="tool-chip">${t}</div>`).join("");
+  const detailPanel = document.getElementById("skill-detail-panel");
+  wrap.querySelectorAll(".skill-top").forEach(button => {
+    button.addEventListener("click", () => {
+      const wasSelected = button.getAttribute("aria-pressed") === "true";
+      wrap.querySelectorAll(".skill-top").forEach(item => {
+        item.setAttribute("aria-pressed", "false");
+      });
+      if (wasSelected){
+        detailPanel.replaceChildren();
+      } else {
+        const skill = SKILLS[Number(button.dataset.skillIndex)];
+        button.setAttribute("aria-pressed", "true");
+        detailPanel.innerHTML = `
+          <div class="skill-detail-content">
+            <p class="kicker">SKILL DETAIL</p>
+            <h3 class="skill-detail-title">${skill.name}</h3>
+            <div class="skill-detail-items">${skill.details.split(", ").map(item => `<span class="skill-detail-item">${item}</span>`).join("")}</div>
+          </div>
+        `;
+      }
+    });
+  });
 }
 
 function animateSkillBars(){
