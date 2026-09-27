@@ -3,18 +3,21 @@
    ============================================================ */
 
 const SKILLS = [
-  { name: "AWS / Cloud Infrastructure", pct: 92 },
-  { name: "Terraform / CloudFormation (IaC)", pct: 90 },
-  { name: "Kubernetes & Docker", pct: 88 },
-  { name: "CI/CD (Jenkins)", pct: 90 },
-  { name: "DevSecOps (SAST / DAST / CSPM)", pct: 90 },
-  { name: "Python / Automation", pct: 85 },
-  { name: "Monitoring (Prometheus / Grafana / CloudWatch)", pct: 80 },
+  { name: "Cloud, OS & Infrastructure", details: "Linux (RHEL/Ubuntu), AWS, Docker, Kubernetes, Terraform, CloudFormation, AWS Organizations, Control Tower, EC2, S3, IAM, Lambda, KMS, Route 53, ASG, ALB, VPC", pct: 92 },
+  { name: "Generative AI Tools", details: "ChatGPT, Claude, Gemini", pct: 85 },
+  { name: "Concepts", details: "CI/CD, IaC, CSPM, SAST, DAST, System Design, Scripting, Database Management, Vulnerability Management", pct: 90 },
+  { name: "DevSecOps & Security", details: "Wiz (CSPM), SonarQube, Snyk, AWS Inspector, Checkmarx, Aqua, SAST/DAST, IAM Policies, SCPs", pct: 90 },
+  { name: "Monitoring Tools", details: "Prometheus, Grafana, AWS CloudWatch", pct: 80 },
+  { name: "Frameworks & Tools", details: "Jenkins, Chef, Git, GitHub, Maven, JFrog, Snyk", pct: 90 },
+  { name: "Programming Languages", details: "Python, Groovy, Bash/Shell", pct: 85 },
+  { name: "Networking", details: "TCP/IP, switching, routing, VPC Networking", pct: 80 },
 ];
 
 const TOOLS = [
-  "Wiz", "SonarQube", "Snyk", "Checkmarx", "Aqua",
-  "AWS Inspector", "Nessus", "Jenkins", "Git"
+  "ChatGPT", "Claude", "Gemini", "Wiz", "SonarQube", "Snyk",
+  "AWS Inspector", "Checkmarx", "Aqua", "Prometheus",
+  "Grafana", "AWS CloudWatch", "Jenkins", "Chef", "Git", "GitHub",
+  "Maven", "JFrog"
 ];
 
 const PROJECTS = [
@@ -48,12 +51,12 @@ const TIMELINE = [
   {
     date: "Feb 2025 — Present",
     title: "Software Engineer II, JPMorgan Chase",
-    desc: "Auto-remediation with Wiz CSPM, shift-left DevSecOps, and least-privilege access across 47 AWS accounts."
+    desc: "Responsible for designing and automating secure AWS cloud and DevSecOps workflows, including Wiz CSPM-based remediation, IAM and SCP-based access controls, and security compliance automation. Implemented SAST, SCA, and Docker security scanning within CI/CD pipelines to enable shift-left security. Engineered standardized rootless Docker base images for microservices and developed Python-based REST APIs to automate security tollgates, compliance checks, and vulnerability controls across CI/CD workflows."
   },
   {
     date: "Jul 2022 — Jan 2025",
     title: "Software Engineer I, JPMorgan Chase",
-    desc: "IaC-based CI/CD for Lambda, SonarQube-integrated pipelines, and a Jira-validation gatekeeper — cut build times 50%."
+    desc: "Responsible for automating AWS infrastructure provisioning using CloudFormation and building scalable CI/CD pipelines with Jenkins, Kubernetes, Docker, and SonarQube. Developed Python-based AWS Lambda services to automate SDLC and Jira compliance validation, repository classification, security enforcement, and CI/CD governance. Improved deployment efficiency by automating infrastructure setup, code quality checks, compliance validations, and containerized application deployments"
   },
   {
     date: "Mar 2021 — May 2021",
@@ -172,6 +175,7 @@ function populateSkills(){
     <div class="skill-row">
       <div class="skill-top"><span class="skill-name">${s.name}</span><span class="skill-pct">${s.pct}%</span></div>
       <div class="skill-track"><div class="skill-fill" data-pct="${s.pct}"></div></div>
+      <p class="skill-detail">${s.details}</p>
     </div>
   `).join("");
 
