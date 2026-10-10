@@ -362,6 +362,33 @@ exitModal.addEventListener("click", (e) => { if (e.target === exitModal) exitMod
    ============================================================ */
 const hudClock = document.getElementById("hud-clock");
 
+const pageLoadCount = document.getElementById("page-load-count");
+if (pageLoadCount) {
+  const pageId = "darkstarp-dev-agrawal-portfolio";
+  const counterUrl = new URL("https://visitor-badge.laobi.icu/badge");
+  counterUrl.searchParams.set("page_id", pageId);
+  counterUrl.searchParams.set("cache", String(Date.now()));
+  fetch(counterUrl, { cache: "no-store" })
+    .then(response => {
+      if (!response.ok) throw new Error(`Counter request failed with status ${response.status}`);
+      return response.text();
+    })
+    .then(svgText => {
+      const svg = new DOMParser().parseFromString(svgText, "image/svg+xml");
+      if (svg.querySelector("parsererror")) throw new Error("Counter response was not valid SVG");
+      const count = Array.from(svg.querySelectorAll("text")).at(-1)?.textContent?.trim();
+      if (!count || !/^\d+$/.test(count)) throw new Error("Counter response did not contain a valid count");
+      pageLoadCount.textContent = count;
+      pageLoadCount.style.fontSize = `${Math.min(46, 88 / count.length)}px`;
+      pageLoadCount.closest(".minimap-wrap").setAttribute("aria-label", `Page load count: ${count}`);
+    })
+    .catch(error => {
+      console.warn("Unable to load page count:", error);
+      pageLoadCount.textContent = "—";
+      pageLoadCount.closest(".minimap-wrap").setAttribute("aria-label", "Page load count unavailable");
+    });
+}
+
 function tick(){
   const now = new Date();
   hudClock.textContent = now.toLocaleTimeString([], { hour12:false, hour:'2-digit', minute:'2-digit' });

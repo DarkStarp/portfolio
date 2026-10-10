@@ -175,12 +175,28 @@ button:focus-visible, a:focus-visible{
   position: fixed; left: 24px; bottom: 26px; z-index: 35;
   display:flex; align-items:flex-end; gap:12px;
 }
-.minimap{
-  width:100px; height:60px;
+.minimap-wrap{
+  position:relative; flex:0 0 100px; width:100px; height:60px;
   background: var(--panel-soft);
   border: 1px solid var(--line);
   border-radius: 3px;
   backdrop-filter: blur(6px);
+}
+.minimap-count{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden; white-space:nowrap;
+  color:rgba(238,242,248,.24);
+  font-family:'UnifrakturCook', var(--font-display);
+  font-size:44px; font-weight:700; line-height:1;
+  font-variant-numeric:lining-nums;
+  text-shadow:0 0 12px rgba(238,242,248,.12);
+  user-select:none; pointer-events:none;
+}
+.minimap{
+  position:absolute; inset:0;
+  display:block; width:100%; height:100%;
+  overflow:visible; pointer-events:none;
 }
 .minimap-n{ font-family: var(--font-mono); font-size:7px; fill: var(--text-muted); }
 .objective-text{ display:flex; flex-direction:column; gap:2px; padding-bottom:4px; }
@@ -195,8 +211,8 @@ button:focus-visible, a:focus-visible{
 
 @media (max-width: 720px){
   .objective-panel{ left:12px; bottom:64px; right:12px; }
-  .minimap{ display:none; }
   .objective-text{
+    min-width:0;
     background: var(--panel-soft); border:1px solid var(--line);
     border-radius:4px; padding:7px 11px; backdrop-filter: blur(6px);
   }

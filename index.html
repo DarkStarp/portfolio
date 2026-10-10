@@ -7,7 +7,7 @@
 <meta name="description" content="Dev Agrawal — Software Engineer II specializing in DevOps, Cloud infrastructure and DevSecOps at JPMorgan Chase.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Yellowtail&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=UnifrakturCook:wght@700&family=Yellowtail&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -55,11 +55,14 @@
 
 <!-- bottom-left objective / minimap -->
 <div class="objective-panel">
-  <svg class="minimap" viewBox="0 0 100 60">
-    <line x1="6" y1="54" x2="94" y2="6" stroke="var(--map-line)" stroke-width="2"/>
-    <circle id="minimap-dot" cx="6" cy="54" r="4" fill="var(--accent-current)"/>
-    <text x="8" y="14" class="minimap-n">N</text>
-  </svg>
+  <div class="minimap-wrap" role="img" aria-label="Page load count">
+    <span class="minimap-count" id="page-load-count" aria-hidden="true">—</span>
+    <svg class="minimap" viewBox="0 0 100 60" aria-hidden="true">
+      <line x1="6" y1="54" x2="94" y2="6" stroke="var(--map-line)" stroke-width="2"/>
+      <circle id="minimap-dot" cx="6" cy="54" r="4" fill="var(--accent-current)"/>
+      <text x="8" y="14" class="minimap-n">N</text>
+    </svg>
+  </div>
   <div class="objective-text">
     <span class="objective-eyebrow">CURRENT OBJECTIVE</span>
     <span class="objective-title" id="objective-title">START SESSION</span>
